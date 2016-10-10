@@ -4,13 +4,13 @@ function sayThatWasEasy()
     thatWasEasy.play();
 }
 
-$("#easy").on("click", sayThatWasEasy);
+$("#highNoon").on("click", sayThatWasEasy);
 $(document).keypress(delegateKeypress);
 
 function delegateKeypress(event)
 {
     if (event.charCode == 32)
     {
-        $("#easy").trigger("click");
+        $("#highNoon").trigger("click");
     }
 }
