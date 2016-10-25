@@ -50,3 +50,12 @@ function draw()
         
     }
 }
+
+function keyPressed() 
+{
+    if (keyCode === 115 || keyCode === 83)
+    {
+        saveCanvas('geometric_pattern', 'png')
+    }
+    return false;
+}
