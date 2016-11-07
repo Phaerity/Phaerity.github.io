@@ -21,20 +21,25 @@ function draw()
         {
             isGameOver= true;
         }
+        
+        if (enemy.overlap(player))
+        {
+            gameOver();
+        }
     }
     background(0, 0, 100);
     
     if (keyDown(RIGHT_ARROW) && player.position.x < (width-25))
     {
-        player.position.x = player.position.x + 1;
+        player.position.x = player.position.x + 2;
     }
     
     if (keyDown(LEFT_ARROW) && player.position.x > 25)
     {
-        player.position.x = player.position.x - 1;
+        player.position.x = player.position.x - 2;
     }
     
-    enemy.position.y = enemy.position.y + 3;
+    enemy.position.y = enemy.position.y + 5;
     
     if (enemy.position.y > height)
     {
