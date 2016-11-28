@@ -10,9 +10,6 @@ function preload()
     playerImage = loadImage("https://s-media-cache-ak0.pinimg.com/736x/57/d5/b4/57d5b467f1d3a8edc1ae41d0640e03ef.jpg");
     enemyImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/OdL0XPt.png");    
     backgroundImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/aKQOg3G.png");
-    playerImage.style.width = '5%';
-    playerImage.style.height = 'auto';
-    
 }
 
 function setup()
@@ -21,6 +18,8 @@ function setup()
     createCanvas(256, 256);
     player = createSprite(width/2, height-(playerImage.height/2), 0, 0)
     player.addImage(playerImage);
+    playerImage.style.width = '5%';
+    playerImage.style.height = 'auto';
     enemy = createSprite(width/2, 0, 0, 0)
     enemy.addImage(enemyImage);
     enemy.rotationSpeed= 4.0;
