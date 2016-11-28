@@ -34,28 +34,33 @@ function draw()
         {
             isGameOver= true;
         }
+        if (enemy.overlap(player)) 
+        {
+            gameOver();
+        }
+        
+        background(backgroundImage);
+    
+        if (keyDown(RIGHT_ARROW) && player.position.x < (width-(playerImage.width/2)))
+        {
+            player.position.x += 2;
+        }
+    
+        if (keyDown(LEFT_ARROW) && player.position.x > (playerImage.width/2))
+        {
+            player.position.x -= 2;
+        }
+    
+        enemy.position.y = enemy.position.y + 5;
+    
+        if (enemy.position.y > height)
+        {
+            enemy.position.y = 0;
+            enemy.position.x = random(5, width-5);
+        }
+    
+        drawSprites();
     }
-    background(backgroundImage);
-    
-    if (keyDown(RIGHT_ARROW) && player.position.x < (width-(playerImage.width/2)))
-    {
-        player.position.x += 2;
-    }
-    
-    if (keyDown(LEFT_ARROW) && player.position.x > (playerImage.width/2))
-    {
-        player.position.x -= 2;
-    }
-    
-    enemy.position.y = enemy.position.y + 5;
-    
-    if (enemy.position.y > height)
-    {
-        enemy.position.y = 0;
-        enemy.position.x = random(5, width-5);
-    }
-    
-    drawSprites();
 }
 
 function gameOver()
